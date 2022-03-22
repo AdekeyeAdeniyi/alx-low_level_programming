@@ -1,1 +1,1 @@
-My Readme for 0x00-hello_world
+Readme file for low level programming
