@@ -6,32 +6,37 @@
  *@width: grid's width.
  *@height: grid's height.
  *Return: pointer to grid.
-*/
+ */
 
 int **alloc_grid(int width, int height)
 {
-	int **grid, w, h;
+	int **iarray;
+	int i, n;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	grid = malloc(sizeof(int *) * height);
-	if (grid == NULL)
-		return (NULL);
+	iarray = malloc(sizeof(int) * height);
 
-	for (h = 0; h < height; h++)
+	if (iarray == NULL)
 	{
-		grid[h] = malloc(sizeof(int) * width);
-		if (grid[h] == NULL)
+		free(iarray);
+		return (NULL);
+	}
+
+	for (i = 0; i < height; i++)
+	{
+		iarray[i] = malloc(sizeof(int) * width);
+		if (iarray == NULL)
 		{
-		for (h--; h >= 0; h--)
-			free(grid[h]);
-			free(grid);
+			free(iarray);
 			return (NULL);
 		}
+
+		for (n = 0; n < width; n++)
+		{
+			iarray[i][n] = 0;
+		}
 	}
-	for (h = 0; h < height; h++)
-		for (w = 0; w < width; w++)
-			grid[h][w] = 0;
-	return (grid);
+	return (iarray);
 }
