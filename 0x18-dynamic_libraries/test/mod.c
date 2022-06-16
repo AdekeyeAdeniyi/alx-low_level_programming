@@ -1,6 +1,6 @@
-#include "main.h"
+#include <stdio.h>
 
-int mod(int a, int b){
-    int mod = a % b;
-    return mod;
+int mod(int num1, int num2){
+	int sum = num1 % num2;
+	return sum;
 }
