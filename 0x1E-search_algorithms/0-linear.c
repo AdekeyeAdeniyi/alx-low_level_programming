@@ -1,6 +1,6 @@
 #include "search_algos.h"
 /**
-* Function: linear_search
+* Function:linear_search
 * ----------------------------
 *   Return the first index where value is located
 *
