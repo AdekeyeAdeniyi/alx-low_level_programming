@@ -1,3 +1,5 @@
+#include "search_algos"
+
 /**
 * Function: linear_search
 * ----------------------------
